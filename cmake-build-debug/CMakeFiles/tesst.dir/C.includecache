@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/victor1890/workspace/rainy/crud/library/Biblioteca.h
+stdio.h
+-
+getopt.h
+-
+stdlib.h
+-
+
+/home/victor1890/workspace/rainy/crud/main.c
+stdio.h
+-
+library/Biblioteca.h
+/home/victor1890/workspace/rainy/crud/library/Biblioteca.h
+

@@ -1,0 +1,3 @@
+/home/victor1890/workspace/rainy/crud/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/victor1890/workspace/rainy/crud/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/victor1890/workspace/rainy/crud/cmake-build-debug/CMakeFiles/tesst.dir
