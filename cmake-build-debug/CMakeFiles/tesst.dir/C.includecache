@@ -6,17 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/home/victor1890/workspace/rainy/crud/library/Biblioteca.h
+/home/victor1890/workspace/rainy/crud/library/Inventario.h
 stdio.h
 -
 getopt.h
 -
 stdlib.h
 -
+string.h
+/home/victor1890/workspace/rainy/crud/library/string.h
+../models/Producto.h
+/home/victor1890/workspace/rainy/crud/models/Producto.h
 
 /home/victor1890/workspace/rainy/crud/main.c
 stdio.h
 -
-library/Biblioteca.h
-/home/victor1890/workspace/rainy/crud/library/Biblioteca.h
+library/Inventario.h
+/home/victor1890/workspace/rainy/crud/library/Inventario.h
+
+/home/victor1890/workspace/rainy/crud/models/Producto.h
+stdio.h
+-
 
