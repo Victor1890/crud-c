@@ -5,11 +5,14 @@
 
 //Model of products
 #include "../models/Producto.h"
+
+#define SEGUNDOS 5000
+
 void Delay(int second);
 void MenuInventario();
 void AgregarInentario();
 void EditarInventario(struct Producto *productos);
-void Roles_menu(struct Producto *productos);
+void Roles_menu();
 void EliminarInventario(struct Producto *productos);
 void ReporteInventario(struct Producto *productos, int number);
 
@@ -17,6 +20,7 @@ int num = 0;
 
 void MenuInventario(struct Producto *productos)
 {
+    system("cls");
     int option = 0;
     printf("    |      [1]  Agregar Producto           |\n");
     printf("    |      [2]  Modificar Producto         |\n");
@@ -40,11 +44,10 @@ void MenuInventario(struct Producto *productos)
             ReporteInventario(productos,num);
         break;
         default:
-            Roles_menu(productos);
+            Roles_menu();
         break;
     }
 }
-
 
 void AgregarInentario()
 {
@@ -52,7 +55,7 @@ void AgregarInentario()
     int cantidad = 0;
     system("cls");
     printf("\n\nAgregar producto al inventario\n\n");
-    printf("%cCantidad de producto que deseas agregar%c: \t", 168, 63); scanf("%d", &cantidad);
+    printf("Cantidad de producto que deseas agregar%c: \t", 63); scanf("%d", &cantidad);
 
     num = cantidad;
 
@@ -73,12 +76,15 @@ void AgregarInentario()
         printf("Agregar la cantidad de productos que 'habr%c' disponibles: \t", 160);
         scanf("%d", &(productos+i)->cantidad_items);
 
+        printf("Agregar el precio del producto: \t");
+        scanf("%d", &(productos + i)->price);
+
         fflush(stdin);
     }
     fflush(stdin);
     system("cls");
     printf("Saliendo...\n\n");
-    Delay(2000);
+    Delay(SEGUNDOS);
     ReporteInventario(productos, num);
     Roles_menu(productos);
 }
@@ -109,7 +115,10 @@ void EditarInventario(struct Producto *productos)
                 printf("Agregar nueva cantidad de productos que 'habr%c' disponibles: \t", 160);
                 scanf("%d", &(productos + i)->cantidad_items);
 
-                printf("\n\nEl '%s' a sido retirado del inventario, pase un buen d%ca", (productos + i)->nombre_producto, 161);
+                printf("Agregar el nuevo precio del producto: \t");
+                scanf("%d", &(productos + i)->price);
+
+                printf("\n\nEl '%s' a sido editado del inventario, pase un buen d%ca", (productos + i)->nombre_producto, 161);
                 ReporteInventario(productos, num);
 
                 printf("\n\n%cDeseas salir%c (escribir 'Y' para un si o 'N' para un no):\t",168 ,63); scanf("%s", &respuesta);
@@ -142,11 +151,11 @@ void ReporteInventario(struct Producto *productos, int number)
         printf("Usted no tiene ning%cn producto de inventario guardado en nuestras bases de datos",163);
 
     printf("\n\nLista de los Productos");
-    printf("\n\nID || Nombre || Disponibilidad \n");
+    printf("\n\nID || Nombre || Disponibilidad || Precio\n");
 
     for(int i = 0; i < number; i++)
     {
-        printf("\n\n%d || %s || %d \n", ((productos + i)->id + 1), (productos + i)->nombre_producto, (productos + i)->cantidad_items);
+        printf("\n\n%d || %s || %d || %d \n", ((productos + i)->id + 1), (productos + i)->nombre_producto, (productos + i)->cantidad_items, (productos + i)->price);
     }
 }
 
@@ -169,6 +178,7 @@ void EliminarInventario(struct Producto *productos)
                 (productos + i)->id = 0;
                 strcpy((productos + i)->nombre_producto, "");
                 (productos + i)->cantidad_items = 0;
+                (productos + i)->price = 0;
 
                 printf("\n\nEl '%s' a sido retirado del inventario, pase un buen d%ca", (productos + i)->nombre_producto, 161);
                 ReporteInventario(productos, num);

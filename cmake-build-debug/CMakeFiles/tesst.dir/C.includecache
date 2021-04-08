@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+/home/victor1890/workspace/rainy/crud/library/Compras.h
+stdio.h
+-
+getopt.h
+-
+stdlib.h
+-
+string.h
+/home/victor1890/workspace/rainy/crud/library/string.h
+../models/Compra.h
+/home/victor1890/workspace/rainy/crud/models/Compra.h
+
 /home/victor1890/workspace/rainy/crud/library/Inventario.h
 stdio.h
 -
@@ -23,6 +35,12 @@ stdio.h
 -
 library/Inventario.h
 /home/victor1890/workspace/rainy/crud/library/Inventario.h
+library/Compras.h
+/home/victor1890/workspace/rainy/crud/library/Compras.h
+
+/home/victor1890/workspace/rainy/crud/models/Compra.h
+stdio.h
+-
 
 /home/victor1890/workspace/rainy/crud/models/Producto.h
 stdio.h

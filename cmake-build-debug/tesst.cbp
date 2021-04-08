@@ -76,6 +76,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/victor1890/workspace/rainy/crud/library/Compras.h">
+			<Option target="tesst"/>
+		</Unit>
 		<Unit filename="/home/victor1890/workspace/rainy/crud/library/Inventario.h">
 			<Option target="tesst"/>
 		</Unit>

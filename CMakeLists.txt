@@ -3,4 +3,4 @@ project(tesst C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(tesst main.c library/Inventario.h)
+add_executable(tesst main.c library/Inventario.h library/Compras.h)

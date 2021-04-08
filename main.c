@@ -3,23 +3,21 @@
 //
 
 #include <stdio.h>
-//#include "library/Biblioteca.h"
 #include "library/Inventario.h"
+#include "library/Compras.h"
 
 void Delay(int second);
-void Roles_menu(struct Producto *productos);
+void Roles_menu();
 
 void main()
 {
-    struct Producto *productos;
     fflush(stdin);
     printf("Antes de usar este sotfware, primero deber%c ingresar los titulos de los libros al sistema", 160);
     printf("\nen la opci%cn del bibliotecario y luego as%c podra usar el sistema de biblioteca en la opci%cn de estudiantes",162, 161, 162);
     printf("\nQue tenga un lindo d%ca :)\n\n\n",161);
     printf("Precionar ENTER para continuar");
     getchar();
-    //List_Products(productos,2);
-    Roles_menu(productos);
+    Roles_menu();
 }
 
 //void Advertencia()
@@ -38,9 +36,11 @@ void main()
 //    printf("    `-'                       '--------------------------'");
 //}
 
-void Roles_menu(struct Producto *productos)
+void Roles_menu()
 {
     int option = 0;
+    struct Producto *productos = NULL;
+
     system("cls");
     printf("    |      [1]  Inventarios           |\n");
     printf("    |      [2]  Compras               |\n");
@@ -53,17 +53,15 @@ void Roles_menu(struct Producto *productos)
     {
         case 1:
             MenuInventario(productos);
+            Roles_menu();
         break;
         case 2:
-        {
-//            if(AreYouAdmin() == 'y')
-//                AgregarProducto();
-            printf("\n\nUsted no es bibliotecario");
-        }
+            MenuCompras(productos);
+            Roles_menu();
         break;
         default:
             system("cls");
-            Roles_menu(productos);
+            Roles_menu();
         break;
     }
 }
