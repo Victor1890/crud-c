@@ -4,7 +4,7 @@
 #include "string.h"
 
 //Model of products
-#include "../models/Producto.h"
+// #include "../models/Producto.h"
 
 
 #define SEGUNDOS 5000
@@ -14,7 +14,7 @@ void AgregarCompras();
 void Delay(int second);
 void ModificarCompras(struct Producto *producto);
 void MenuCompras(struct Producto *producto);
-void LitaCompras(struct Producto *producto, int number);
+void LitasCompras(struct Producto *producto, int number);
 
 //Global Variable
 int cantidadCompras = 0;
@@ -42,7 +42,7 @@ void MenuCompras(struct Producto *producto)
             AgregarCompras();
         break;
         case 4:
-            LitaCompras(producto, cantidadCompras);
+            LitasCompras(producto, cantidadCompras);
         break;
         default:
             Roles_menu();
@@ -90,7 +90,7 @@ void AgregarCompras()
     system("cls");
     printf("Saliendo...\n\n");
     Delay(SEGUNDOS);
-    LitaCompras(producto,cantidadCompras);
+    LitasCompras(producto,cantidadCompras);
 }
 
 void ModificarCompras(struct Producto *producto)
@@ -132,10 +132,10 @@ void ModificarCompras(struct Producto *producto)
     system("cls");
     printf("Saliendo...\n\n");
     Delay(SEGUNDOS);
-    LitaCompras(producto,cantidadCompras);
+    LitasCompras(producto,cantidadCompras);
 }
 
-void LitaCompras(struct Producto *producto, int number)
+void LitasCompras(struct Producto *producto, int number)
 {
     system("cls");
 

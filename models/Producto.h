@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 struct Producto
 {
     int id;

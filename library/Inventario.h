@@ -71,7 +71,7 @@ void AgregarInentario()
 
         printf("Agregar el nombre del producto: \t");
         getchar();
-        scanf("%[^\n]", &(productos+i)->nombre_producto);
+        scanf("%[^\n]", (productos+i)->nombre_producto);
 
         printf("Agregar la cantidad de productos que 'habr%c' disponibles: \t", 160);
         scanf("%d", &(productos+i)->cantidad_items);
@@ -110,7 +110,7 @@ void EditarInventario(struct Producto *productos)
             {
                 printf("Nuevi nombre del producto: \t");
                 getchar();
-                scanf("%[^\n]", &(productos + i)->nombre_producto);
+                scanf("%[^\n]", (productos + i)->nombre_producto);
 
                 printf("Agregar nueva cantidad de productos que 'habr%c' disponibles: \t", 160);
                 scanf("%d", &(productos + i)->cantidad_items);

@@ -6,6 +6,8 @@
 #include "library/Inventario.h"
 #include "library/Compras.h"
 
+// #include "models/Producto.h"
+
 void Delay(int second);
 void Roles_menu();
 
